@@ -8,5 +8,9 @@ routerUsuario.use(express.json());
 routerUsuario.use(express.urlencoded({extended:true}));
 
 routerUsuario.post('/api/createUser',usuariosControllers.createUser);
+routerUsuario.post('/api/login',usuariosControllers.login);
+routerUsuario.put('/api/updateUser/:id',usuariosControllers.updateUser);
+routerUsuario.delete('/api/deleteUser/:id',usuariosControllers.deleteUser);
+routerUsuario.get('/api/getAllUser',usuariosControllers.getAllUsers);
 
 module.exports={routerUsuario};
