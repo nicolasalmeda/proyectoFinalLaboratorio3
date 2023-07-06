@@ -34,8 +34,9 @@ const usuariosControllers = {
             res.sendStatus(409);
           } else {
             connection.query(insert_query, (err, insertResult) => {
-              connection.release();
+              
               if (err) {
+                connection.release();
                 console.error("Error al insertar nuevo usuario: ", err);
                 res.status(500).send("Error del servidor al crear un nuevo usuario.");
               } else {
